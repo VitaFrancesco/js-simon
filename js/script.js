@@ -18,3 +18,19 @@
 // *** funzione che controlla quanti numeri sono corretti
 // inserire il contenuto in p con id messade visualizzando il numero di numeri corretti
 
+// funzione timer
+function timer () {
+    const countdown = document.getElementById('countdown')
+    let seconds = 30;
+    const time = setInterval(function () {
+        seconds -= 1;
+        countdown.innerHTML = seconds;
+        if (seconds === 0) {
+            clearInterval(time);
+        }
+    }, 1000)
+
+    
+}
+
+timer()
