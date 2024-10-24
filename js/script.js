@@ -34,3 +34,16 @@ function timer () {
 }
 
 timer()
+
+// funzione che mi genera tot numeri compresi tra un minimo e un massimo
+function randomNumber (min, max, many) {
+    const remembNumber = [];
+    for (let i = 0; i < many; i++) {
+        const iNumber = parseInt((Math.random() * (max - min + 1)) + min);
+        remembNumber.push(iNumber);
+    }
+    return remembNumber
+}
+
+console.log(randomNumber (5, 10, 5));
+
