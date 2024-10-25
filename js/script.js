@@ -106,7 +106,7 @@ const instructions = document.getElementById('instructions');
 const countdown = document.getElementById('countdown');
 
 
-timer (10);
+timer (30);
 
 // seleziono tutti gli input del form e li salvo in un array
 const formElement = document.querySelectorAll('#answers-form input');
