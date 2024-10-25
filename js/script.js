@@ -19,9 +19,9 @@
 // inserire il contenuto in p con id messade visualizzando il numero di numeri corretti
 
 // funzione timer
-function timer () {
+function timer (timerTime) {
     const countdown = document.getElementById('countdown')
-    let seconds = 30;
+    let seconds = timerTime;
     const time = setInterval(function () {
         seconds -= 1;
         countdown.innerHTML = seconds;
@@ -33,7 +33,7 @@ function timer () {
     
 }
 
-timer()
+timer(30)
 
 // funzione che mi genera tot numeri compresi tra un minimo e un massimo
 function randomNumber (min, max, many) {
@@ -46,4 +46,24 @@ function randomNumber (min, max, many) {
 }
 
 console.log(randomNumber (5, 10, 5));
+const remembNumber = randomNumber (1, 50, 5)
 
+// visalizza i numeri contenuti nell'array in elementi html li (vedere fragment per visualizzarli assieme)
+// **************************************
+
+function generateHtml (type, array, id) {
+    // Create a document fragment:
+    const dFrag = document.createDocumentFragment();
+
+    // Add li elements to the fragment:
+    for (let i = 0; i < array.length; i++) {
+        const li = document.createElement(type);
+        li.textContent = array[i];
+        dFrag.appendChild(li);
+    }
+
+    // Add fragment to a list:
+    document.getElementById(id).appendChild(dFrag);
+}
+
+generateHtml ('li', remembNumber, 'numbers-list')
